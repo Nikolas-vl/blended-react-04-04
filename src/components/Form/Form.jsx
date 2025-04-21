@@ -4,17 +4,12 @@ import style from './Form.module.css';
 const Form = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
-
     const form = e.target;
-    const input = form.elements.search;
-    const value = input.value.trim();
-
-    if (value === '') {
-      return;
-    }
-
+    const value = form.elements.search.value.trim();
+    if (!value) return;
     onSubmit(value);
-    form.reset();
+
+    form.reset;
   };
 
   return (
